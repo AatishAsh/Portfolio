@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Full Name | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <div class="container">
+        <h1>Aatish Ashok A</h1>
+        <p>Computer Science Student | Aspiring Software Developer</p>
+    </div>
+</header>
+
+<section class="about-layout">
+  <div class="card about">
+    <h2>About Me</h2>
+    <p>I am currently pursuing a Degree in B.Tech Computer Science Engineering at Rajiv Gandhi  College of Engineering and Technology.<br>
+                I am passionate about software development, open-source technologies,
+                and building scalable solutions.<br> I actively participate in hackathons,
+                collaborative projects, and community-driven technical initiatives.</p>
+  </div>
+
+  <div class="card education">
+    <h2>Education</h2>
+    <h3>Bachelor of Technology in Computer Science Engineering</h3>
+    <p><a href="https://rgcet.edu.in/">Rajiv Gandhi  College of Engineering and Technology</a></p>
+    <p>2023-2027</p>
+  </div>
+
+  <div class="card leadership">
+    <h2>Leadership & Activities</h2>
+    <ul>
+        <li>Class Representative</li>
+        <li>Team Leader – Smart India Hackathon (2024)</li>
+        <li>Member – TUX GLUG (Linux & Open Source Community)</li>
+        <li>Conducted 5+ events in college</li>
+        <li>Designed posters and promotional materials for multiple events</li>
+        <li>Created logos currently used by two college clubs</li>
+
+</ul>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+    <div class="container">
+        <h2>Technical Skills</h2>
+        <div class="skill-con">
+        <!-- Languages -->
+        <h3 class="sub-heading">Languages</h3>
+        <div class="skills-grid">
+
+            <div class="skill-item">
+                <img src="images/python.png" alt="Python">
+                <span class="tooltip">Python</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="images/html.png" alt="HTML">
+                <span class="tooltip">HTML</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="images/css.png" alt="CSS">
+                <span class="tooltip">CSS</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="images/javascript.png" alt="JavaScript">
+                <span class="tooltip">JavaScript</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="images/gdscript.png" alt="GDScript">
+                <span class="tooltip">GDScript</span>
+            </div>
+
+        </div>
+
+        <!-- Tools -->
+        <h3 class="sub-heading">Tools & Technologies</h3>
+        <div class="skills-grid">
+
+            <div class="skill-item">
+                <img src="images/git.png" alt="Git">
+                <span class="tooltip">Git</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="images/github.png" alt="GitHub">
+                <span class="tooltip">GitHub</span>
+            </div>
+
+            <div class="skill-item">
+                <img src="images/vs.png" alt="VS Code">
+                <span class="tooltip">Visual Studio Code</span>
+            </div>
+
+        
+        </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+    <div class="container">
+        <h2>Projects</h2>
+        <div class="project-wrapper">
+            <div class="project-grid">
+
+                <div class="project-card p1">
+                    <h3>2D Puzzle Platformer (ongoing)</h3>
+                    <p>
+                        Open-source 2D puzzle platformer built using GDScript.
+                        Focused on gameplay mechanics and level design.
+                    </p>
+                </div>
+
+                <div class="project-card p2">
+                    <h3>Comprehensive Travel Web Application – Smart India Hackathon</h3>
+                    <p>
+                        Smart India Hackathon project. Led team in designing
+                        a tourism promotion platform solution.
+                    </p>
+                </div>
+                <div class="project-card p3">
+                    <h3>Responsive Portfolio</h3>
+                    <p>
+                        You are looking at it right now
+                    </p>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+<section>
+
+
+<!-- CERTIFICATIONS -->
+<section>
+    <div class="container">
+        <h2>Certifications</h2>
+        <div class="card">
+            <p><strong>NPTEL – Python for Data Science</strong></p>
+            <p>Silver Elite Certification</p>
+        </div>
+    </div>
+</section>
+<section>
+
+<div class="container">
+
+<h2>Contact</h2>
+
+<div class="card">
+
+<p>Email: <a href="aatishashok004@gmail.com">aatishashok004@gmail.com</a></p>
+
+<p>GitHub:  <a href="https://github.com/AatishAsh">github.com/AatishAsh</p></a> 
+
+<p>LinkedIn: <a href="https://www.linkedin.com/in/aatish-ashok/">linkedin.com/in/aatish-ashok</a></p>
+
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+const track = document.querySelector('.project-grid');
+
+// Duplicate content for seamless loop
+track.innerHTML += track.innerHTML;
+
+let position = 0;
+const speed = 0.4;
+
+function animate() {
+    position -= speed;
+
+    if (Math.abs(position) >= track.scrollWidth / 2) {
+        position = 0;
+    }
+
+    track.style.transform = `translateX(${position}px)`;
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>
