@@ -309,4 +309,36 @@ footer {
     section {
         padding: 60px 20px;
     }
+
+      .about-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .about {
+        grid-row: auto; /* remove spanning */
+    }
+    
+    /* PROJECTS STACK VERTICALLY */
+    .project-wrapper {
+        overflow: visible;
+    }
+
+    .project-grid {
+        flex-direction: column;
+        width: 100%;
+        transform: none !important; /* stops JS transform */
+    }
+
+    .project-card {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .project-wrapper::before,
+    .project-wrapper::after {
+        display: none;
+    }
+
 }

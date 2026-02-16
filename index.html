@@ -179,30 +179,55 @@
 
 </div>
 
-</section>
-
 <script>
-const track = document.querySelector('.project-grid');
+    const track = document.querySelector('.project-grid');
+    let position = 0;
+    const speed = 0.4;
+    let animationFrame;
+    let isDuplicated = false;
 
-// Duplicate content for seamless loop
-track.innerHTML += track.innerHTML;
+    function startAnimation() {
+        if (!isDuplicated) {
+            track.innerHTML += track.innerHTML;
+            isDuplicated = true;
+        }
 
-let position = 0;
-const speed = 0.4;
+        function animate() {
+            position -= speed;
 
-function animate() {
-    position -= speed;
+            if (Math.abs(position) >= track.scrollWidth / 2) {
+                position = 0;
+            }
 
-    if (Math.abs(position) >= track.scrollWidth / 2) {
-        position = 0;
+            track.style.transform = `translateX(${position}px)`;
+
+            animationFrame = requestAnimationFrame(animate);
+        }
+
+        animate();
     }
 
-    track.style.transform = `translateX(${position}px)`;
+    function stopAnimation() {
+        cancelAnimationFrame(animationFrame);
+        position = 0;
+        track.style.transform = "none";
 
-    requestAnimationFrame(animate);
-}
+        if (isDuplicated) {
+            track.innerHTML = track.innerHTML.substring(0, track.innerHTML.length / 2);
+            isDuplicated = false;
+        }
+    }
 
-animate();
+    function handleResize() {
+        if (window.innerWidth > 768) {
+            startAnimation();
+        } else {
+            stopAnimation();
+        }
+    }
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
 </script>
 
 </body>
